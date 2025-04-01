@@ -1,0 +1,2 @@
+#Criar container postgresSQL
+docker run --name PI2 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=123456 -e POSTGRES_DB=fuxicodb -p 5432:5432 -d postgres
