@@ -12,5 +12,4 @@ public class Categoria extends DefaultEntity{
     
     @Column
     private String nome;
-
 }

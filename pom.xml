@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.unitins</groupId>
-    <artifactId>fuxico</artifactId>
+    <artifactId>fuxico-quarkus</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
@@ -12,7 +12,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.21.0</quarkus.platform.version>
+        <quarkus.platform.version>3.22.3</quarkus.platform.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.2</surefire-plugin.version>
     </properties>
@@ -31,42 +31,42 @@
 
     <dependencies>
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-smallrye-openapi</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-openapi</artifactId>
         </dependency>
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-hibernate-orm-panache</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm-panache</artifactId>
         </dependency>
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-resteasy</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-resteasy</artifactId>
         </dependency>
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-resteasy-jackson</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-resteasy-jackson</artifactId>
         </dependency>
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-jdbc-postgresql</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-jdbc-postgresql</artifactId>
         </dependency>
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-arc</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-arc</artifactId>
         </dependency>
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-hibernate-orm</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm</artifactId>
         </dependency>
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-junit5</artifactId>
-        <scope>test</scope>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-junit5</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
-        <groupId>io.rest-assured</groupId>
-        <artifactId>rest-assured</artifactId>
-        <scope>test</scope>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <scope>test</scope>
         </dependency>
         <!-- Dependecia LOMBOK -->
             <dependency>
@@ -79,24 +79,24 @@
         <!-- Dependecia JWT token -->
         <!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-hibernate-validator -->
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-hibernate-validator</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-validator</artifactId>
         </dependency>
 
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-smallrye-jwt</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-jwt</artifactId>
         </dependency>
 
         <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-smallrye-jwt-build</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-jwt-build</artifactId>
         </dependency> 
     
         <dependency>
-        <groupId>javax</groupId>
-        <artifactId>javaee-api</artifactId>
-        <version>8.0.1</version>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0.1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-multipart-provider -->
         <dependency>
@@ -104,10 +104,11 @@
             <artifactId>resteasy-multipart-provider</artifactId>
         </dependency>
         <dependency>
-        <groupId>org.apache.tika</groupId>
-        <artifactId>tika-core</artifactId>
-        <version>1.28.4</version>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>1.28.4</version>
         </dependency>
+
     </dependencies>
 
     <build>
