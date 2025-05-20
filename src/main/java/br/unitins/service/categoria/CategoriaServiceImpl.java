@@ -1,4 +1,4 @@
-package br.unitins.service;
+package br.unitins.service.categoria;
 
 import java.util.List;
 
@@ -6,11 +6,13 @@ import br.unitins.dto.categoria.CategoriaDTO;
 import br.unitins.dto.categoria.CategoriaResponseDTO;
 import br.unitins.model.Categoria;
 import br.unitins.repository.CategoriaRepository;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.NotFoundException;
 
+@ApplicationScoped
 public class CategoriaServiceImpl implements CategoriaService{
 
     @Inject

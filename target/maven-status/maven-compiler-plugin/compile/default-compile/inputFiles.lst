@@ -1,2 +1,14 @@
-C:\Users\leonardo.carvalho\Desktop\fuxico-quarkus\src\main\java\br\unitins\model\Categoria.java
-C:\Users\leonardo.carvalho\Desktop\fuxico-quarkus\src\main\java\br\unitins\model\DefaultEntity.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\dto\categoria\CategoriaDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\dto\categoria\CategoriaResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\dto\subcategoria\SubCategoriaDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\dto\subcategoria\SubCategoriaResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\model\Categoria.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\model\DefaultEntity.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\model\SubCategoria.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\repository\CategoriaRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\repository\SubCategoriaRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\resource\CategoriaResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\service\categoria\CategoriaService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\service\categoria\CategoriaServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\service\subcategoria\SubCategoriaService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus-main\src\main\java\br\unitins\service\subcategoria\SubCategoriaServiceImpl.java

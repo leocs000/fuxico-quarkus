@@ -1,4 +1,4 @@
-package br.unitins.service;
+package br.unitins.service.categoria;
 
 import java.util.List;
 

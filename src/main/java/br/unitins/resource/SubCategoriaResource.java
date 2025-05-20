@@ -2,12 +2,10 @@ package br.unitins.resource;
 
 import org.eclipse.microprofile.jwt.JsonWebToken;
 
-import br.unitins.dto.categoria.CategoriaDTO;
-import br.unitins.dto.categoria.CategoriaResponseDTO;
-import br.unitins.service.categoria.CategoriaService;
+import br.unitins.dto.subcategoria.SubCategoriaDTO;
+import br.unitins.dto.subcategoria.SubCategoriaResponseDTO;
+import br.unitins.service.subcategoria.SubCategoriaService;
 import io.quarkus.logging.Log;
-import jakarta.annotation.security.RolesAllowed;
-
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
@@ -16,20 +14,20 @@ import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
-import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.MediaType;
 
-@Path("/categorias")
+@Path("/subcategorias")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class CategoriaResource {
+public class SubCategoriaResource {
 
     @Inject
-    CategoriaService service;
+    SubCategoriaService service;
 
     @Inject
     JsonWebToken jwt;
@@ -37,14 +35,14 @@ public class CategoriaResource {
     @Transactional
     @POST
 //    @RolesAllowed({"Admin"})
-    public Response insert(CategoriaDTO dto){
+    public Response insert(SubCategoriaDTO dto){
         try {
             
-            CategoriaResponseDTO responseDTO = service.insert(dto);
+            SubCategoriaResponseDTO responseDTO = service.insert(dto);
             return Response.status(Response.Status.CREATED).entity(responseDTO).build();
         } catch (Exception e) {
-            Log.error("Erro ao cadastrar uma categoria: ", e);
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Erro ao cadastrar a categoria.").build();
+            Log.error("Erro ao cadastrar uma subcategoria: ", e);
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Erro ao cadastrar a subcategoria.").build();
         }
     }
 
@@ -52,8 +50,8 @@ public class CategoriaResource {
     @Transactional
     @Path("/{id}")
 //    @RolesAllowed({"User","Admin"})
-    public CategoriaResponseDTO update(CategoriaDTO dto, @PathParam("id") Long id) {
-        Log.info("Atualizando a categoria: "+id);
+    public SubCategoriaResponseDTO update(SubCategoriaDTO dto, @PathParam("id") Long id) {
+        Log.info("Atualizando a subcategoria: "+id);
         return service.update(dto, id);
     }
 
@@ -62,7 +60,7 @@ public class CategoriaResource {
     @Path("/{id}")
 //    @RolesAllowed({"User","Admin"})
     public void delete(@PathParam("id") Long id) {
-        Log.info("Deletando a categoria:" +id);
+        Log.info("Deletando a subcategoria:" +id);
         service.delete(id);
     }
 
@@ -72,7 +70,7 @@ public class CategoriaResource {
             @QueryParam("page") @DefaultValue("0") int page,
             @QueryParam("pageSize") @DefaultValue("30") int pageSize){
 
-        Log.info("Buscando todas as categorias cadastradas.");
+        Log.info("Buscando todas as subcategorias cadastradas.");
         return Response.ok(service.findByAll(page, pageSize)).build();
     }
 
@@ -80,7 +78,7 @@ public class CategoriaResource {
     @Path("/{id}")
 //    @RolesAllowed({"Admin"})
     public Response findById(@PathParam("id") Long id){
-        Log.info("Buscando a categoria expecificada pelo id: "+id);
+        Log.info("Buscando a subcategoria expecificada pelo id: "+id);
         return Response.ok(service.findById(id)).build();
     }
 
@@ -92,7 +90,7 @@ public class CategoriaResource {
             @QueryParam("page") @DefaultValue("0") int page,
             @QueryParam("pageSize") @DefaultValue("30") int pageSize ){
 
-        Log.info("Buscando a categoria expecificada pelo nome: "+nome);
+        Log.info("Buscando a subcategoria expecificada pelo nome: "+nome);
         return Response.ok(service.findByNome(nome, page, pageSize)).build();
     }
 
@@ -107,5 +105,4 @@ public class CategoriaResource {
     public long count(@PathParam("nome") String nome) {
         return service.countByNome(nome);
     }
-
 }
