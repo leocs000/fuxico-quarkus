@@ -7,11 +7,13 @@ import br.unitins.dto.topico.TopicoResponseDTO;
 import br.unitins.model.Topico;
 import br.unitins.repository.TopicoRepository;
 import br.unitins.service.questionario.QuestionarioService;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.NotFoundException;
 
+@ApplicationScoped
 public class TopicoServiceImpl implements TopicoService{
 
     @Inject

@@ -9,8 +9,10 @@ import br.unitins.dto.topico.TopicoDTO;
 import br.unitins.model.Questionario;
 import br.unitins.model.Topico;
 import br.unitins.repository.QuestionarioRepository;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
+@ApplicationScoped
 public class QuestionarioServiceImpl implements QuestionarioService{
 
     @Inject
