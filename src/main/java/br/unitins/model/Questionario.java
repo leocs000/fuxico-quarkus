@@ -5,7 +5,11 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Questionario extends DefaultEntity{
 
     @Column
