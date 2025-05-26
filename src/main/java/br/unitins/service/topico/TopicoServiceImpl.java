@@ -39,14 +39,14 @@ public class TopicoServiceImpl implements TopicoService{
     @Override
     @Transactional
     public TopicoResponseDTO update(TopicoDTO dto, Long id) {
-        Topico Topico = topicoRepository.findById(id);
-        if(Topico != null){
-            Topico.setNome(dto.getNome());
-            Topico.setQuestionario(questionarioService.findById(dto.getIdQuestionario()));
+        Topico topico = topicoRepository.findById(id);
+        if(topico != null){
+            topico.setNome(dto.getNome());
+            topico.setQuestionario(questionarioService.findById(dto.getIdQuestionario()));
         }else
             throw new NotFoundException();
 
-        return TopicoResponseDTO.valueOf(Topico);
+        return TopicoResponseDTO.valueOf(topico);
     }
 
     @Override

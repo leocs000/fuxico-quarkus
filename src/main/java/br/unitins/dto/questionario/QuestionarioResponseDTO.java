@@ -21,7 +21,7 @@ public record QuestionarioResponseDTO(
             questionario.getTitulo(),
             questionario.getDescricao(),
             questionario.getTopicos().stream()
-                .map(TopicoResponseDTO::valueOf)
+                .map(topico -> TopicoResponseDTO.valueOf(topico))
                 .collect(Collectors.toList()),
             questionario.getStatus(),
             questionario.getDataCriacao()
