@@ -1,14 +1,19 @@
 package br.unitins.service.avaliacao;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import br.unitins.dto.avaliacao.AvaliacaoDTO;
 import br.unitins.dto.avaliacao.AvaliacaoResponseDTO;
-import br.unitins.dto.subcategoria.SubCategoriaResponseDTO;
+import br.unitins.dto.questionario.QuestionarioResponseDTO;
+import br.unitins.dto.respostas.RespostasResponseDTO;
 import br.unitins.model.Avaliacao;
-import br.unitins.model.SubCategoria;
+import br.unitins.model.Questionario;
+import br.unitins.model.Respostas;
+import br.unitins.model.Topico;
 import br.unitins.repository.AvaliacaoRepository;
 import br.unitins.service.questionario.QuestionarioService;
+import br.unitins.service.respostas.RespostasService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -23,6 +28,9 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
 
     @Inject
     QuestionarioService questionarioService;
+
+    @Inject
+    RespostasService respostasService;
    
     @Override
     @Transactional
@@ -34,10 +42,31 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
 
         avaliacaoRepository.persist(novaAvaliacao);
 
+         List<Respostas> respostas = dto.getRespostas().stream()
+                .map(dtoRespostas -> {
+                        dtoRespostas.setIdAvaliacao(novaAvaliacao.getId());
+                        RespostasResponseDTO responseDTO = respostasService.insert(dtoRespostas); // Obtém o DTO
+                        return convertToEntity(responseDTO);
+                })
+                .collect(Collectors.toList());
+
+        novaAvaliacao.setRespostas(respostas);
+
         return AvaliacaoResponseDTO.valueOf(novaAvaliacao);
     }
 
+     private Respostas convertToEntity(RespostasResponseDTO dto) {
+        Respostas resposta = new Respostas();
+        if (dto.topico() != null) { 
+            resposta.setTopico(new Topico()); 
+            resposta.getTopico().setNome(dto.topico()); 
+        }
+        resposta.setEstrela(dto.estrela());
+        return resposta;
+    }
+
     @Override
+    @Transactional
     public AvaliacaoResponseDTO update(AvaliacaoDTO dto, Long id) {
         Avaliacao avaliacao = new Avaliacao();
         if(avaliacao != null){
@@ -51,21 +80,22 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        if (!avaliacaoRepository.deleteById(id)) 
+        throw new NotFoundException("Avaliacao não encontrada com o ID: " + id);
     }
 
     @Override
     public Avaliacao findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        return avaliacaoRepository.findById(id);
     }
 
     @Override
     public List<AvaliacaoResponseDTO> findByNome(String nome, int page, int pageSize) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findByNome'");
+        List<Avaliacao> list = avaliacaoRepository.findByNome(nome).page(page, pageSize).list();
+        return list.stream()
+                .map(e -> AvaliacaoResponseDTO.valueOf(e)).toList();
     }
 
     @Override
@@ -76,14 +106,12 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
 
     @Override
     public long count() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+        return avaliacaoRepository.count();
     }
 
     @Override
     public long countByNome(String nome) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'countByNome'");
+        return avaliacaoRepository.findByNome(nome).count();
     }
 
 }

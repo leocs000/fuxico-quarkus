@@ -10,6 +10,8 @@ import lombok.Getter;
 public class AvaliacaoDTO {
     Date dataAvaliacao;
     String comentario;
+    Double toxicidade;
+    boolean visibilidade;
     Long idQuestionario;
     List<RespostasDTO> respostas;
 //    Long idAvaliador;

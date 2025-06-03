@@ -19,6 +19,13 @@ public class Avaliacao extends DefaultEntity{
     private Date dataAvaliacao;
     @Column
     private String comentario;
+    
+    @Column
+    private Double toxicidade;
+
+    @Column
+    private boolean visibiliadade;
+    
     @ManyToOne
     @JoinColumn(name = "id_questionario")
     private Questionario questionario;

@@ -13,6 +13,7 @@ import br.unitins.repository.QuestionarioRepository;
 import br.unitins.service.topico.TopicoService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
 
 @ApplicationScoped
@@ -67,8 +68,6 @@ public class QuestionarioServiceImpl implements QuestionarioService{
             questionario.setStatus(dto.getStatus());
             questionario.setDataCriacao(dto.getDataCriacao());
 
-            questionarioRepository.persist(questionario);
-
             List<Topico> topicos = dto.getTopicos().stream()
                 .map(dtoTopico -> {
                         TopicoResponseDTO responseDTO = topicoService.update(dtoTopico, dtoTopico.getId());
@@ -86,6 +85,7 @@ public class QuestionarioServiceImpl implements QuestionarioService{
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         if (!questionarioRepository.deleteById(id)) 
         throw new NotFoundException("Questionario não encontrada com o ID: " + id);
