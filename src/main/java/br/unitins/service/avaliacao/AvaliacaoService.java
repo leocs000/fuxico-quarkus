@@ -23,4 +23,9 @@ public interface AvaliacaoService {
     public long count();
 
     public long countByNome(String nome);
+
+    public List<AvaliacaoResponseDTO> listarAvaliacoesPendentes(int page, int pageSize);
+
+    public AvaliacaoResponseDTO aprovarAvaliacao(Long id);
+
 }

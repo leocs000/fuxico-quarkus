@@ -1,9 +1,12 @@
 package br.unitins.resource;
 
+import java.util.List;
+
 import org.eclipse.microprofile.jwt.JsonWebToken;
 
 import br.unitins.dto.avaliacao.AvaliacaoDTO;
 import br.unitins.dto.avaliacao.AvaliacaoResponseDTO;
+import br.unitins.model.Avaliacao;
 import br.unitins.service.avaliacao.AvaliacaoService;
 import io.quarkus.logging.Log;
 import jakarta.inject.Inject;
@@ -104,4 +107,21 @@ public class AvaliacaoResource {
     public long count(@PathParam("nome") String nome) {
         return service.countByNome(nome);
     }
+
+    @GET
+    @Path("/pendentes")
+    public Response listarAvaliacoesPendentes(
+            @QueryParam("page") @DefaultValue("0") int page,
+            @QueryParam("pageSize") @DefaultValue("30") int pageSize ) {
+        return Response.ok(service.listarAvaliacoesPendentes(page, pageSize)).build();
+    }
+
+    @PUT
+    @Path("/{id}/aprovar")
+    public AvaliacaoResponseDTO aprovarAvaliacao(@PathParam("id") Long id) {
+        Log.info("Atualizando a Avaliacao: "+id);
+        return service.aprovarAvaliacao(id);
+    }
+
+
 }

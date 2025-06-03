@@ -10,4 +10,8 @@ public class AvaliacaoRepository implements PanacheRepository<Avaliacao>{
     public PanacheQuery<Avaliacao> findByNome(String nome){
         return find("UPPER(nome) LIKE UPPER(?1)", "%" + nome + "%");
     }
+
+    public PanacheQuery<Avaliacao> listarAvaliacoesPendentes(){
+        return find("toxicidade >= 0.0 AND aprovado = false");
+    }
 }
