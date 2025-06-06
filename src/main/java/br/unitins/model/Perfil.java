@@ -8,8 +8,9 @@ import lombok.Getter;
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum Perfil {
 
-    USER(1, "User"),
-    ADMIN(2, "Admin");
+    AVALIADOR(1, "Avaliador"),
+    FUNCIONARIO(2, "Funcionario"),
+    ADMIN(3, "Admin");
 
     private final Integer id;
     private final String label;
