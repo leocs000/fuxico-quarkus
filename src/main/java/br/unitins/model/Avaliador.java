@@ -35,6 +35,6 @@ public class Avaliador extends DefaultEntity{
     private TipoAvaliador tipoAvaliador;
 
     @OneToOne
-    @JoinTable(name = "cliente_usuario", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_cliente"))
+    @JoinTable(name = "avaliador_usuario", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_avaliador"))
     private Usuario usuario;
 }
