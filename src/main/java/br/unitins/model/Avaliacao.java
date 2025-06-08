@@ -33,7 +33,7 @@ public class Avaliacao extends DefaultEntity{
     @OneToMany(mappedBy = "avaliacao")
     private List<Respostas> respostas;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_avaliador")
-//    private Usuario usuario;
+    @ManyToOne
+    @JoinColumn(name = "id_avaliador")
+    private Avaliador avaliador;
 }

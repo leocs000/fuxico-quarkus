@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.unitins.dto.avaliador.AvaliadorDTO;
 import br.unitins.dto.avaliador.AvaliadorResponseDTO;
+import br.unitins.model.Avaliador;
 import jakarta.validation.Valid;
 
 public interface AvaliadorService {

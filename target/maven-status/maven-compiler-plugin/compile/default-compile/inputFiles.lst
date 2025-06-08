@@ -1,45 +1,82 @@
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\avaliacao\AvaliacaoDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\avaliacao\AvaliacaoResponseDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\categoria\CategoriaDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\categoria\CategoriaResponseDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\questionario\QuestionarioDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\questionario\QuestionarioResponseDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\respostas\RespostasDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\respostas\RespostasResponseDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\subcategoria\SubCategoriaDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\subcategoria\SubCategoriaResponseDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\topico\TopicoDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\dto\topico\TopicoResponseDTO.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\model\Avaliacao.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\model\Categoria.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\model\DefaultEntity.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\model\Perfil.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\model\Questionario.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\model\Respostas.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\model\SubCategoria.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\model\Topico.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\model\Usuario.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\repository\AvaliacaoRepository.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\repository\CategoriaRepository.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\repository\QuestionarioRepository.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\repository\RespostasRepository.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\repository\SubCategoriaRepository.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\repository\TopicoRepository.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\resource\AvaliacaoResource.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\resource\CategoriaResource.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\resource\QuestionarioResource.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\resource\SubCategoriaResource.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\resource\TopicoResource.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\avaliacao\AvaliacaoService.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\avaliacao\AvaliacaoServiceImpl.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\categoria\CategoriaService.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\categoria\CategoriaServiceImpl.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\perspectiveService\PerspectiveService.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\questionario\QuestionarioService.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\questionario\QuestionarioServiceImpl.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\respostas\RespostasService.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\respostas\RespostasServiceImpl.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\subcategoria\SubCategoriaService.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\subcategoria\SubCategoriaServiceImpl.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\topico\TopicoService.java
-C:\Users\leonardo.carvalho\Desktop\PI 2\fuxico-quarkus\src\main\java\br\unitins\service\topico\TopicoServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\avaliacao\AvaliacaoDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\avaliacao\AvaliacaoResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\avaliador\AvaliadorDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\avaliador\AvaliadorResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\categoria\CategoriaDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\categoria\CategoriaResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\questionario\QuestionarioDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\questionario\QuestionarioResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\respostas\RespostasDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\respostas\RespostasResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\subcategoria\SubCategoriaDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\subcategoria\SubCategoriaResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\tipoAvaliador\TipoAvaliadorDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\tipoAvaliador\TipoAvaliadorResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\topico\TopicoDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\topico\TopicoResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\usuario\AlterarLoginUsuarioDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\usuario\AlterarSenhaUsuarioDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\usuario\AuthUsuarioDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\usuario\LoginDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\usuario\UsuarioDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\dto\usuario\UsuarioResponseDTO.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\Avaliacao.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\Avaliador.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\Categoria.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\converterjpa\PerfilConverter.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\DefaultEntity.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\Perfil.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\Questionario.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\Respostas.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\SubCategoria.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\TipoAvaliador.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\Topico.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\model\Usuario.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\repository\AvaliacaoRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\repository\AvaliadorRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\repository\CategoriaRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\repository\QuestionarioRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\repository\RespostasRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\repository\SubCategoriaRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\repository\TipoAvaliadorRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\repository\TopicoRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\repository\UsuarioRepository.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\AuthResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\AvaliacaoResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\AvaliadorResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\CadastroAvaliadorResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\CategoriaResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\QuestionarioResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\SubCategoriaResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\TipoAvaliadorResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\TopicoResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\UsuarioLogadoResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\resource\UsuarioResource.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\avaliacao\AvaliacaoService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\avaliacao\AvaliacaoServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\avaliador\AvaliadorService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\avaliador\AvaliadorServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\categoria\CategoriaService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\categoria\CategoriaServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\hash\HashService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\hash\HashServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\jwt\JwtService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\jwt\JwtServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\perspectiveService\PerspectiveService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\questionario\QuestionarioService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\questionario\QuestionarioServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\respostas\RespostasService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\respostas\RespostasServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\subcategoria\SubCategoriaService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\subcategoria\SubCategoriaServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\tipoAvaliador\TipoAvaliadorService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\tipoAvaliador\TipoAvaliadorServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\topico\TopicoService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\topico\TopicoServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\usuario\UsuarioService.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\service\usuario\UsuarioServiceImpl.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\validation\BeanValidationExceptionMapper.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\validation\ForbiddenExceptionMapper.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\validation\ValidationError.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\validation\ValidationException.java
+C:\Users\lohan\Desktop\Leonardo\fuxico-quarkus\src\main\java\br\unitins\validation\ValidationExceptionMapper.java
