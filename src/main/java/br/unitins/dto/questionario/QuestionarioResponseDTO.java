@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import br.unitins.dto.subcategoria.SubCategoriaResponseDTO;
 import br.unitins.dto.topico.TopicoResponseDTO;
 import br.unitins.model.Questionario;
 
@@ -13,7 +14,8 @@ public record QuestionarioResponseDTO(
     String descricao,
     List<TopicoResponseDTO> topicos,
     Boolean status,
-    Date dataCriacao
+    Date dataCriacao,
+    SubCategoriaResponseDTO subcategoria
 ) {
     public static QuestionarioResponseDTO valueOf(Questionario questionario) {
         return new QuestionarioResponseDTO(
@@ -24,7 +26,8 @@ public record QuestionarioResponseDTO(
                 .map(topico -> TopicoResponseDTO.valueOf(topico))
                 .collect(Collectors.toList()),
             questionario.getStatus(),
-            questionario.getDataCriacao()
+            questionario.getDataCriacao(),
+            SubCategoriaResponseDTO.valueOf(questionario.getSubcategoria())
         );
     }
 }

@@ -10,6 +10,7 @@ import br.unitins.dto.topico.TopicoResponseDTO;
 import br.unitins.model.Questionario;
 import br.unitins.model.Topico;
 import br.unitins.repository.QuestionarioRepository;
+import br.unitins.service.subcategoria.SubCategoriaService;
 import br.unitins.service.topico.TopicoService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -25,6 +26,9 @@ public class QuestionarioServiceImpl implements QuestionarioService{
     @Inject
     TopicoService topicoService;
 
+    @Inject
+    SubCategoriaService subCategoriaService;
+
     @Override
     public QuestionarioResponseDTO insert(QuestionarioDTO dto) {
 
@@ -33,6 +37,7 @@ public class QuestionarioServiceImpl implements QuestionarioService{
             novoQuestionario.setDescricao(dto.getDescricao());
             novoQuestionario.setStatus(dto.getStatus());
             novoQuestionario.setDataCriacao(dto.getDataCriacao());
+            novoQuestionario.setSubcategoria(subCategoriaService.findById(dto.getIdSubcategoria()));
 
             questionarioRepository.persist(novoQuestionario);
 
@@ -67,6 +72,7 @@ public class QuestionarioServiceImpl implements QuestionarioService{
             questionario.setDescricao(dto.getDescricao());
             questionario.setStatus(dto.getStatus());
             questionario.setDataCriacao(dto.getDataCriacao());
+            questionario.setSubcategoria(subCategoriaService.findById(dto.getIdSubcategoria()));
 
             List<Topico> topicos = dto.getTopicos().stream()
                 .map(dtoTopico -> {

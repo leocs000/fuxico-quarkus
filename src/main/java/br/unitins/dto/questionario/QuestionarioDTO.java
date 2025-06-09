@@ -15,5 +15,6 @@ public class QuestionarioDTO {
     private List<TopicoDTO> topicos;
     private Boolean status;
     private Date dataCriacao;
+    private Long idSubcategoria;
 
 }
