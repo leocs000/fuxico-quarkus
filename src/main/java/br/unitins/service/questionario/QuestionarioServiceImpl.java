@@ -1,6 +1,7 @@
 package br.unitins.service.questionario;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import br.unitins.dto.questionario.QuestionarioDTO;
@@ -67,28 +68,45 @@ public class QuestionarioServiceImpl implements QuestionarioService{
     @Override
     public QuestionarioResponseDTO update(QuestionarioDTO dto, Long id) {
         Questionario questionario = questionarioRepository.findById(id);
-        if(questionario != null){
-            questionario.setTitulo(dto.getTitulo());
-            questionario.setDescricao(dto.getDescricao());
-            questionario.setStatus(dto.getStatus());
-            questionario.setDataCriacao(dto.getDataCriacao());
-            questionario.setSubcategoria(subCategoriaService.findById(dto.getIdSubcategoria()));
-
-            List<Topico> topicos = dto.getTopicos().stream()
-                .map(dtoTopico -> {
-                        TopicoResponseDTO responseDTO = topicoService.update(dtoTopico, dtoTopico.getId());
-                        return convertToEntity(responseDTO);
-                })
-                .collect(Collectors.toList());
-
-
-            questionario.setTopicos(topicos);
-            
-        }else
+        if (questionario == null)
             throw new NotFoundException();
+
+        questionario.setTitulo(dto.getTitulo());
+        questionario.setDescricao(dto.getDescricao());
+        questionario.setStatus(dto.getStatus());
+        questionario.setDataCriacao(dto.getDataCriacao());
+        questionario.setSubcategoria(subCategoriaService.findById(dto.getIdSubcategoria()));
+
+        List<Long> novosIds = dto.getTopicos().stream()
+            .map(TopicoDTO::getId)
+            .filter(Objects::nonNull)
+            .toList();
+
+        List<Topico> topicosParaRemover = questionario.getTopicos().stream()
+            .filter(t -> !novosIds.contains(t.getId()))
+            .toList();
+
+        // Remove os tópicos que foram excluídos visualmente
+        topicosParaRemover.forEach(topico -> {
+            topicoService.delete(topico.getId());
+        });
+
+        // Atualiza e adiciona os tópicos restantes
+        List<Topico> topicosAtualizados = dto.getTopicos().stream()
+            .map(dtoTopico -> {
+                TopicoResponseDTO responseDTO =
+                    dtoTopico.getId() == null
+                        ? topicoService.insert(dtoTopico)
+                        : topicoService.update(dtoTopico, dtoTopico.getId());
+                return convertToEntity(responseDTO);
+            })
+            .toList();
+
+        questionario.setTopicos(topicosAtualizados);
 
         return QuestionarioResponseDTO.valueOf(questionario);
     }
+
 
     @Override
     @Transactional
