@@ -65,7 +65,7 @@ public class TipoAvaliadorResource {
     }
 
     @GET
-    @RolesAllowed({"Avaliador","Admin"})
+    //@RolesAllowed({"Avaliador","Admin"})
     public Response findAll(
             @QueryParam("page") @DefaultValue("0") int page,
             @QueryParam("pageSize") @DefaultValue("30") int pageSize){
