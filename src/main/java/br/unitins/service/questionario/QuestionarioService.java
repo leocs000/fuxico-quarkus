@@ -14,7 +14,9 @@ public interface QuestionarioService {
 
     public void delete(Long id);
 
-    public Questionario findById(Long id);
+    public QuestionarioResponseDTO findById(Long id);
+
+    public Questionario findEntityById(Long id);
     
     public List<QuestionarioResponseDTO> findByNome(String nome, int page, int pageSize);
 

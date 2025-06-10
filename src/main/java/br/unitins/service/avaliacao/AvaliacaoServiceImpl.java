@@ -49,7 +49,7 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
         novaAvaliacao.setComentario(dto.getComentario());
         novaAvaliacao.setToxicidade(toxicidade);
         novaAvaliacao.setVisibiliadade(false);
-        novaAvaliacao.setQuestionario(questionarioService.findById(dto.getIdQuestionario()));
+        novaAvaliacao.setQuestionario(questionarioService.findEntityById(dto.getIdQuestionario()));
 
         avaliacaoRepository.persist(novaAvaliacao);
 
@@ -95,7 +95,7 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
             avaliacao.setComentario(dto.getComentario());
             avaliacao.setToxicidade(toxicidade);
             avaliacao.setVisibiliadade(false);
-            avaliacao.setQuestionario(questionarioService.findById(dto.getIdQuestionario()));
+            avaliacao.setQuestionario(questionarioService.findEntityById(dto.getIdQuestionario()));
 
             List<Respostas> respostas = dto.getRespostas().stream()
                     .map(dtoRespostas -> {

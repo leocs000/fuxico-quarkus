@@ -3,6 +3,8 @@ package br.unitins.model;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -24,6 +26,7 @@ public class Questionario extends DefaultEntity{
 
     
     @OneToMany(mappedBy = "questionario")
+    @JsonManagedReference
     private List<Topico> topicos;
 
     @Column

@@ -29,7 +29,7 @@ public class TopicoServiceImpl implements TopicoService{
         novoTopico.setNome(dto.getNome());
         novoTopico.setDescricao(dto.getDescricao());
         novoTopico.setEstrelas(dto.getEstrelas());
-        novoTopico.setQuestionario(questionarioService.findById(dto.getIdQuestionario()));
+        novoTopico.setQuestionario(questionarioService.findEntityById(dto.getIdQuestionario()));
 
         topicoRepository.persist(novoTopico);
 
@@ -42,7 +42,7 @@ public class TopicoServiceImpl implements TopicoService{
         Topico topico = topicoRepository.findById(id);
         if(topico != null){
             topico.setNome(dto.getNome());
-            topico.setQuestionario(questionarioService.findById(dto.getIdQuestionario()));
+            topico.setQuestionario(questionarioService.findEntityById(dto.getIdQuestionario()));
         }else
             throw new NotFoundException();
 

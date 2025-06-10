@@ -98,7 +98,12 @@ public class QuestionarioServiceImpl implements QuestionarioService{
     }
 
     @Override
-    public Questionario findById(Long id) {
+    public QuestionarioResponseDTO findById(Long id) {
+        return QuestionarioResponseDTO.valueOf(questionarioRepository.findById(id));
+    }
+
+    @Override
+    public Questionario findEntityById(Long id) {
         return questionarioRepository.findById(id);
     }
 

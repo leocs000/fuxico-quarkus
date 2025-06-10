@@ -1,5 +1,7 @@
 package br.unitins.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -23,5 +25,6 @@ public class Topico extends DefaultEntity{
 
     @ManyToOne
     @JoinColumn(name = "id_questionario")
+    @JsonManagedReference
     private Questionario questionario;
 }
