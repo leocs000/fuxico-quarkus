@@ -14,5 +14,5 @@ public class AvaliacaoDTO {
     boolean visibilidade;
     Long idQuestionario;
     List<RespostasDTO> respostas;
-//    Long idAvaliador;
+    Long idAvaliador;
 }

@@ -14,7 +14,9 @@ public interface AvaliacaoService {
 
     public void delete(Long id);
 
-    public Avaliacao findById(Long id);
+    public Avaliacao findEntityById(Long id);
+
+    public AvaliacaoResponseDTO findById(Long id);
     
     public List<AvaliacaoResponseDTO> findByNome(String nome, int page, int pageSize);
 
@@ -27,5 +29,7 @@ public interface AvaliacaoService {
     public List<AvaliacaoResponseDTO> listarAvaliacoesPendentes(int page, int pageSize);
 
     public AvaliacaoResponseDTO aprovarAvaliacao(Long id);
+
+    public List<AvaliacaoResponseDTO> minhasAvaliacoes(int page, int pageSize);
 
 }

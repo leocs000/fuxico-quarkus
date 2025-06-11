@@ -30,7 +30,7 @@ public class RespostasServiceImpl implements RespostasService{
     @Transactional
     public RespostasResponseDTO insert(@Valid RespostasDTO dto) {
         Respostas novoResposta = new Respostas();
-        novoResposta.setAvaliacao(avaliacaoService.findById(dto.getIdAvaliacao()));
+        novoResposta.setAvaliacao(avaliacaoService.findEntityById(dto.getIdAvaliacao()));
         novoResposta.setTopico(topicoService.findById(dto.getIdTopico()));;
         novoResposta.setEstrela(dto.getEstrela());
 
@@ -44,7 +44,7 @@ public class RespostasServiceImpl implements RespostasService{
     public RespostasResponseDTO update(RespostasDTO dto, Long id) {
         Respostas respostas = respostasRepository.findById(id);
         if(respostas != null){
-            respostas.setAvaliacao(avaliacaoService.findById(dto.getIdAvaliacao()));
+            respostas.setAvaliacao(avaliacaoService.findEntityById(dto.getIdAvaliacao()));
             respostas.setTopico(topicoService.findById(dto.getIdTopico()));;
             respostas.setEstrela(dto.getEstrela());
         }else

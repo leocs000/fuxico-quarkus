@@ -4,8 +4,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import br.unitins.dto.avaliador.AvaliadorResponseDTO;
 import br.unitins.dto.questionario.QuestionarioResponseDTO;
 import br.unitins.dto.respostas.RespostasResponseDTO;
+import br.unitins.dto.usuario.UsuarioResponseDTO;
 import br.unitins.model.Avaliacao;
 
 public record AvaliacaoResponseDTO(
@@ -17,7 +19,8 @@ public record AvaliacaoResponseDTO(
     Long idQuestionario,
     String tituloQuestionario,
     String descricaoQuestionario,
-    List<RespostasResponseDTO> respostas
+    List<RespostasResponseDTO> respostas,
+    AvaliadorResponseDTO avaliador
 ) {
     public static AvaliacaoResponseDTO valueOf(Avaliacao avaliacao){
         return new AvaliacaoResponseDTO(
@@ -31,6 +34,8 @@ public record AvaliacaoResponseDTO(
             avaliacao.getQuestionario().getDescricao(),
             avaliacao.getRespostas().stream()
                 .map(resposta -> RespostasResponseDTO.valueOf(resposta))
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList()),
+            AvaliadorResponseDTO.valueOf(avaliacao.getAvaliador()));
+            
     }
 } 

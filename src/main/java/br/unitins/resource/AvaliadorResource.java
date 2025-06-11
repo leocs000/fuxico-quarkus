@@ -40,7 +40,7 @@ public class AvaliadorResource {
     //public Response update(AvaliadorDTO dto, @PathParam("id") Long id) {
     public Response update(AvaliadorDTO dto) {
         String login = jwt.getSubject();
-        Long idAvaliador = service.findByUsuario(login).id();
+        Long idAvaliador = service.findByUsuario(login).getId();
 
         if (idAvaliador == null) {
             System.out.println("deu ruim pessoal");

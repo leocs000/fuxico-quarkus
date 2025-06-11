@@ -179,9 +179,9 @@ public class AvaliadorServiceImpl implements AvaliadorService{
     }
 
     @Override
-    public AvaliadorResponseDTO findByUsuario(String login) {
+    public Avaliador findByUsuario(String login) {
         Avaliador avaliador = avaliadorRepository.findByLogin(login);
-        return AvaliadorResponseDTO.valueOf(avaliador);
+        return avaliador;
     }
 
 }

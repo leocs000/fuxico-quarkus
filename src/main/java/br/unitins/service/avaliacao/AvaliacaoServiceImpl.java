@@ -3,6 +3,8 @@ package br.unitins.service.avaliacao;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.eclipse.microprofile.jwt.JsonWebToken;
+
 import br.unitins.dto.avaliacao.AvaliacaoDTO;
 import br.unitins.dto.avaliacao.AvaliacaoResponseDTO;
 import br.unitins.dto.respostas.RespostasResponseDTO;
@@ -10,9 +12,11 @@ import br.unitins.model.Avaliacao;
 import br.unitins.model.Respostas;
 import br.unitins.model.Topico;
 import br.unitins.repository.AvaliacaoRepository;
+import br.unitins.service.avaliador.AvaliadorService;
 import br.unitins.service.perspectiveService.PerspectiveService;
 import br.unitins.service.questionario.QuestionarioService;
 import br.unitins.service.respostas.RespostasService;
+import br.unitins.validation.ValidationException;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -29,7 +33,13 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
     QuestionarioService questionarioService;
 
     @Inject
+    AvaliadorService avaliadorService;
+
+    @Inject
     RespostasService respostasService;
+
+    @Inject
+    JsonWebToken jwt;
    
     @Override
     @Transactional
@@ -50,6 +60,7 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
         novaAvaliacao.setToxicidade(toxicidade);
         novaAvaliacao.setVisibiliadade(false);
         novaAvaliacao.setQuestionario(questionarioService.findEntityById(dto.getIdQuestionario()));
+        novaAvaliacao.setAvaliador(avaliadorService.findByUsuario(jwt.getName()));
 
         avaliacaoRepository.persist(novaAvaliacao);
 
@@ -96,6 +107,8 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
             avaliacao.setToxicidade(toxicidade);
             avaliacao.setVisibiliadade(false);
             avaliacao.setQuestionario(questionarioService.findEntityById(dto.getIdQuestionario()));
+            avaliacao.setAvaliador(avaliadorService.findByUsuario(jwt.getName()));
+
 
             List<Respostas> respostas = dto.getRespostas().stream()
                     .map(dtoRespostas -> {
@@ -119,8 +132,13 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
     }
 
     @Override
-    public Avaliacao findById(Long id) {
+    public Avaliacao findEntityById(Long id) {
         return avaliacaoRepository.findById(id);
+    }
+
+    @Override
+    public AvaliacaoResponseDTO findById(Long id) {
+        return AvaliacaoResponseDTO.valueOf(avaliacaoRepository.findById(id));
     }
 
     @Override
@@ -159,6 +177,20 @@ public class AvaliacaoServiceImpl implements AvaliacaoService{
         avaliacao.setVisibiliadade(true);
 
         return AvaliacaoResponseDTO.valueOf(avaliacao);
+    }
+
+    @Override
+    @Transactional
+    public List<AvaliacaoResponseDTO> minhasAvaliacoes(int page, int pageSize) {
+        String login = jwt.getName();
+        List<AvaliacaoResponseDTO> avaliacoes = avaliacaoRepository.find("avaliador.usuario.login", login).page(page, pageSize).stream()
+                .map(e -> AvaliacaoResponseDTO.valueOf(e)).toList();
+
+        if (avaliacoes.isEmpty()) {
+            throw new ValidationException("Verificando...", "Você ainda não fez nenhum pedido :(");
+        }
+        return avaliacoes;
+
     }
 
 }

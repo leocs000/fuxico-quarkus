@@ -15,6 +15,7 @@ import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
@@ -23,6 +24,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 
 @Path("/avaliacoes")
 @Produces(MediaType.APPLICATION_JSON)
@@ -74,6 +76,21 @@ public class AvaliacaoResource {
 
         Log.info("Buscando todas as Avaliacaos cadastradas.");
         return Response.ok(service.findByAll(page, pageSize)).build();
+    }
+
+    @GET
+    @Path("/minhasAvaliacoes")
+//    @RolesAllowed({"User"})
+    public Response minhasAvaliacoes( 
+            @QueryParam("page") @DefaultValue("0") int page,
+            @QueryParam("pageSize") @DefaultValue("30") int pageSize){
+
+        Log.info("Executando o método minhasAvaliacoes() de avaliacao. ");
+        try {
+            return Response.ok(service.minhasAvaliacoes(page, pageSize)).build();
+        } catch (NotFoundException e) {
+            return Response.status(Status.NOT_FOUND).entity(e.getMessage()).build();
+        }
     }
 
     @GET

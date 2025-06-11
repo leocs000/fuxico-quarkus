@@ -16,7 +16,7 @@ public interface AvaliadorService {
 
     public AvaliadorResponseDTO findById(Long id);
 
-    public AvaliadorResponseDTO findByUsuario(String login);
+    public Avaliador findByUsuario(String login);
 
     public List<AvaliadorResponseDTO> findByNome(String nome, int page, int pageSize);
 
